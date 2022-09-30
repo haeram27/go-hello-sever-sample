@@ -10,17 +10,8 @@ services: docker
 
 #### job phases  https://docs.travis-ci.com/user/job-lifecycle/
 #before_install:
-
-## install (M)
-#install:
-
-#before_script:
-
-## script (M)
 script:
   - docker build -t $PUSH_IMAGE_REPO:$PUSH_IMAGE_TAG .
-
-#before_deploy:
 
 deploy:
   provider: script
@@ -30,11 +21,3 @@ deploy:
     branch: main
     repo: $PUSH_IMAGE_REPO
     #tags: true
-
-#after_deploy:
-
-#after_success:
-
-#after_failure:
-
-#after_script:
